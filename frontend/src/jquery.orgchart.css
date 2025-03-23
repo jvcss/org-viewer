@@ -278,7 +278,7 @@
   }
   
   .orgchart .node.allowedDrop {
-    border-color: rgba(68, 157, 68, 0.9);
+    border-color: rgba(62, 167, 181, 1);
   }
   
   .orgchart .node > .spinner {
@@ -392,7 +392,7 @@
   }
   
   .orgchart .edge:hover::before {
-    border-color: #449d44;
+    border-color: #ff007b;
   }
   
   .orgchart .node .verticalEdge {
@@ -474,14 +474,14 @@
   }
   
   .orgchart .node .toggleBtn::before {
-    background-color: rgba(68, 157, 68, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
     position: absolute;
     left: 0;
     bottom: 0;
   }
   
   .orgchart .node .toggleBtn:hover::before {
-    background-color: #449d44;
+    background-color: #ffffff;
   }
   
   .oc-export-btn {
@@ -739,21 +739,27 @@
   }
   
   .orgchart .node.compact .backToCompactSymbol::before {
-    border-top-color: rgba(68, 157, 68, 0.6);
+    border-top-color: rgba(42, 254, 42, 0.9) !important;
   }
   
   .orgchart .node.compact .backToLooseSymbol::before {
-    border-bottom-color: rgba(68, 157, 68, 0.6);
+    border-bottom-color: rgba(101, 255, 101, 0.9) !important;
   }
   
   .orgchart .node.compact .backToCompactSymbol:hover::before {
-    border-top-color: #449d44;
+    border-top-color: #49ff49 !important;
   }
   
   .orgchart .node.compact .backToLooseSymbol:hover::before {
-    border-bottom-color: #449d44;
+    border-bottom-color: #3ef43e !important;
   }
   
+  .orgchart .node:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    transition: .5s;
+    cursor: default;
+    z-index: 2;
+  }
   /* custom icons for orgchart */
   .oci {
     display: inline-block;
