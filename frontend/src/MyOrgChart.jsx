@@ -6,10 +6,11 @@ import "./jquery.orgchart.css";
 
 const MyOrgChart = () => {
   const [chartData, setChartData] = useState(null);
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
   // Busca os dados do orgchart assim que o componente for montado
   useEffect(() => {
-    fetch('http://localhost:3001/api/orgchart')
+    fetch(`${backendUrl}/api/orgchart`)
       .then((response) => response.json())
       .then((data) => {
         setChartData(data);
