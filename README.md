@@ -14,12 +14,14 @@ A comunicação entre o frontend e o backend é realizada através de requisiç�
 ## Tecnologias Utilizadas
 
 - **Frontend:**
+
   - React 18
   - Vite (para bundling e desenvolvimento com HMR)
   - OrgChart (biblioteca jQuery para exibição do diagrama)
   - JavaScript e CSS
 
 - **Backend (Opção 1 – Node.js):**
+
   - Node.js
   - Express
   - CORS
@@ -48,7 +50,7 @@ npm install
 ```
 
 2. **Configurar a variável de ambiente:**
-Crie um arquivo .env na raiz do projeto e defina a URL do backend:
+   Crie um arquivo .env na raiz do projeto e defina a URL do backend:
 
 `VITE_BACKEND_URL=http://localhost:3001`
 
@@ -58,7 +60,9 @@ Crie um arquivo .env na raiz do projeto e defina a URL do backend:
 A aplicação será executada em uma porta padrão (geralmente 3000) e estará pronta para consumir a API do backend.
 
 ### Backend com Node.js (Express)
+
 1. **Configurar o projeto:**
+
 ```bash
 mkdir backend
 cd backend
@@ -70,9 +74,8 @@ npm install express cors
 2. **Criar o arquivo server.js:**
 
 ```js
-
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
 const PORT = 3001;
@@ -81,14 +84,12 @@ const PORT = 3001;
 app.use(cors());
 
 // Endpoint que retorna o JSON do orgchart
-app.get('/api/orgchart', (req, res) => {
+app.get("/api/orgchart", (req, res) => {
   const orgchartData = {
     id: "1",
     name: "CEO",
     title: "general manager",
-    children: [
-      { id: "2", name: "CTO", title: "department manager" }
-    ]
+    children: [{ id: "2", name: "CTO", title: "department manager" }],
   };
   res.json(orgchartData);
 });
@@ -107,6 +108,7 @@ node server.js
 O endpoint estará disponível em http://localhost:3001/api/orgchart.
 
 ### Backend com Laravel
+
 1. **Criar um novo projeto Laravel (caso não exista):**
 
 ```bash
@@ -116,17 +118,17 @@ cd orgchart-backend
 ```
 
 2. **Configurar CORS:**
-Configure o CORS conforme a documentação do Laravel ou utilizando o pacote fruitcake/laravel-cors.
+   Configure o CORS conforme a documentação do Laravel ou utilizando o pacote fruitcake/laravel-cors.
 
 3. **Definir a rota da API:**
-No arquivo `routes/api.php`, adicione:
+   No arquivo `routes/api.php`, adicione:
 
 ```php
 <?php
 
 use Illuminate\Http\Request;
 
-Route::get('/orgchart', function (Request $request) {
+Route::get('/api/orgchart', function (Request $request) {
     return response()->json([
         "id" => "1",
         "name" => "CEO",
@@ -140,11 +142,13 @@ Route::get('/orgchart', function (Request $request) {
 ```
 
 4. **Iniciar o servidor Laravel:**
+
 ```bash
 php artisan serve
 ```
 
 ### Integração do Frontend com o Backend
+
 No componente React, utilizei a variável de ambiente para buscar os dados da API:
 
 ```js
@@ -183,38 +187,38 @@ const OrgChartComponent = () => {
 };
 
 export default OrgChartComponent;
-
 ```
 
 Com essa abordagem, basta alterar o valor da variável de ambiente no arquivo `.env` para apontar para outro backend, sem a necessidade de modificar o código-fonte.
 
 - Versatilidade da Aplicação
-Configuração Dinâmica:
-Utilização de variáveis de ambiente para definir a URL do backend, permitindo alternar facilmente entre diferentes ambientes ou provedores (Node.js, Laravel, etc).
+  Configuração Dinâmica:
+  Utilização de variáveis de ambiente para definir a URL do backend, permitindo alternar facilmente entre diferentes ambientes ou provedores (Node.js, Laravel, etc).
 
 - Arquitetura Desacoplada:
-O frontend e o backend são módulos independentes, o que facilita manutenção, testes e escalabilidade.
+  O frontend e o backend são módulos independentes, o que facilita manutenção, testes e escalabilidade.
 
 - Facilidade de Extensão:
-O backend pode ser ampliado para suportar operações de criação, atualização e deleção (CRUD) dos dados do orgchart, bem como integração com bancos de dados e autenticação.
+  O backend pode ser ampliado para suportar operações de criação, atualização e deleção (CRUD) dos dados do orgchart, bem como integração com bancos de dados e autenticação.
 
 - Experiência de Desenvolvimento Rápida:
-Com Vite e React, o desenvolvimento é ágil graças ao Hot Module Replacement (HMR) e à estrutura moderna do ecossistema JavaScript.
+  Com Vite e React, o desenvolvimento é ágil graças ao Hot Module Replacement (HMR) e à estrutura moderna do ecossistema JavaScript.
 
 - Adaptação a Diferentes Cenários:
-Seja para um ambiente de prototipagem, desenvolvimento ou produção, a aplicação se adapta com mínima configuração extra.
+  Seja para um ambiente de prototipagem, desenvolvimento ou produção, a aplicação se adapta com mínima configuração extra.
 
 ### Futuras Melhorias
+
 - Atualizações em Tempo Real:
-Integração com WebSockets para atualização dinâmica do orgchart conforme mudanças nos dados.
+  Integração com WebSockets para atualização dinâmica do orgchart conforme mudanças nos dados.
 
 - Interface Interativa:
-Implementação de funcionalidades para edição direta dos nós do orgchart.
+  Implementação de funcionalidades para edição direta dos nós do orgchart.
 
 - Melhoria na UX/UI:
-Customização dos estilos e da experiência do usuário para tornar a aplicação ainda mais intuitiva.
+  Customização dos estilos e da experiência do usuário para tornar a aplicação ainda mais intuitiva.
 
 - Testes Automatizados:
-Inclusão de testes unitários e de integração tanto para o frontend quanto para o backend.
+  Inclusão de testes unitários e de integração tanto para o frontend quanto para o backend.
 
-*Esta aplicação demonstra uma abordagem fullstack versátil, onde a flexibilidade de configuração e a separação clara entre frontend e backend possibilitam a adaptação a diversos cenários e requisitos. Sinta-se à vontade para expandir e personalizar o projeto conforme suas necessidades. """*
+_Esta aplicação demonstra uma abordagem fullstack versátil, onde a flexibilidade de configuração e a separação clara entre frontend e backend possibilitam a adaptação a diversos cenários e requisitos. Sinta-se à vontade para expandir e personalizar o projeto conforme suas necessidades. """_
