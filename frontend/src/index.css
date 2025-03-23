@@ -1,68 +1,122 @@
+/* 
+  :root - Define as variáveis e estilos globais que serão herdados por todo o documento.
+  Aqui são configuradas as fontes padrão, cores, e ajustes para renderização de texto.
+*/
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; /* Define a família de fontes, usando várias alternativas caso a primeira não esteja disponível. */
+  line-height: 1.5; /* Define a altura das linhas para melhorar a legibilidade do texto. */
+  font-weight: 400; /* Define o peso padrão da fonte (normal). */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light dark; /* Indica ao navegador que o site suporta temas claro e escuro, permitindo adaptações automáticas. */
+  color: rgba(
+    255,
+    255,
+    255,
+    0.87
+  ); /* Define a cor padrão do texto usando RGBA (branco com 87% de opacidade). */
+  background-color: #242424; /* Define a cor de fundo padrão do site como um tom escuro. */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none; /* Impede que o navegador gere automaticamente variações (como negrito ou itálico) caso não sejam especificadas. */
+  text-rendering: optimizeLegibility; /* Otimiza a renderização do texto para melhorar a legibilidade. */
+  -webkit-font-smoothing: antialiased; /* Melhora a suavização das fontes em navegadores baseados em WebKit (como Chrome e Safari). */
+  -moz-osx-font-smoothing: grayscale; /* Melhora a suavização das fontes em sistemas macOS para navegadores Mozilla. */
 }
 
+/* 
+  Estilização para elementos de link (<a>):
+  Define a aparência dos links de forma consistente.
+*/
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  font-weight: 500; /* Aplica um peso de fonte um pouco mais acentuado aos links, destacando-os do texto normal. */
+  color: #646cff; /* Define a cor dos links. */
+  text-decoration: inherit; /* Faz com que os links herdem a decoração de texto do elemento pai (por exemplo, sem sublinhado, se o pai não tiver). */
 }
+
+/* 
+  Estado de hover para links (<a:hover>):
+  Modifica a aparência dos links quando o mouse passa sobre eles.
+*/
 a:hover {
-  color: #535bf2;
+  color: #535bf2; /* Altera a cor do link quando o usuário passa o mouse sobre ele, proporcionando feedback visual. */
 }
 
-/* body {
-  margin: 0; 
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh; 
-} */
+/* 
+  Estilização para o elemento <body>:
+  Configura a estrutura e o layout da página.
+*/
+body {
+  margin: 0; /* Remove as margens padrão aplicadas pelos navegadores. */
+  display: flex; /* Define o corpo como um container flexível, facilitando o alinhamento dos elementos filhos. */
+  place-items: center; /* Centraliza os itens tanto horizontalmente quanto verticalmente dentro do container flex. */
+  min-width: 320px; /* Define uma largura mínima para garantir a usabilidade em dispositivos com telas pequenas. */
+  min-height: 100vh; /* Define a altura mínima como 100% da viewport, garantindo que o conteúdo ocupe toda a altura disponível. */
+}
 
+/* 
+  Estilização para elementos de cabeçalho de nível 1 (<h1>):
+  Define o tamanho e o espaçamento do título principal.
+*/
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3.2em; /* Define o tamanho da fonte em relação ao tamanho base (em unidades "em"). */
+  line-height: 1.1; /* Ajusta a altura da linha para reduzir o espaçamento vertical entre linhas. */
 }
 
+/* 
+  Estilização para botões (<button>):
+  Configura a aparência, o espaçamento e a interatividade dos botões.
+*/
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  border-radius: 8px; /* Aplica bordas arredondadas ao botão para um visual moderno. */
+  border: 1px solid transparent; /* Define uma borda de 1px inicialmente transparente; a borda será visível em interações (hover). */
+  padding: 0.6em 1.2em; /* Define o espaçamento interno: 0.6em para o vertical e 1.2em para o horizontal. */
+  font-size: 1em; /* Define o tamanho da fonte do botão igual ao tamanho base. */
+  font-weight: 500; /* Aplica um peso de fonte um pouco mais acentuado para destacar o texto do botão. */
+  font-family: inherit; /* Faz com que o botão herde a família de fontes do elemento pai, mantendo a consistência. */
+  background-color: #1a1a1a; /* Define a cor de fundo padrão do botão como um tom escuro. */
+  cursor: pointer; /* Altera o cursor para indicar que o elemento é clicável. */
+  transition: border-color 0.25s; /* Adiciona uma transição suave para a alteração da cor da borda ao longo de 0.25 segundos. */
 }
+
+/* 
+  Estado de hover para botões (<button:hover>):
+  Modifica a aparência do botão quando o mouse passa sobre ele.
+*/
 button:hover {
-  border-color: #646cff;
+  border-color: #646cff; /* Altera a cor da borda para fornecer um feedback visual da interatividade. */
 }
+
+/* 
+  Estados de foco para botões (<button:focus> e <button:focus-visible>):
+  Melhoram a acessibilidade, indicando visualmente quando o botão está em foco (por exemplo, via navegação por teclado).
+*/
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto -webkit-focus-ring-color; /* Adiciona um contorno de 4px ao redor do botão usando a cor padrão do anel de foco dos navegadores WebKit. */
 }
 
+/* 
+  Media Query para o modo claro:
+  Aplica estilos específicos quando o usuário prefere um esquema de cores claro.
+*/
 @media (prefers-color-scheme: light) {
+  /* 
+    Redefinição dos estilos globais para o modo claro.
+    Ajusta as cores para garantir um bom contraste em um fundo claro.
+  */
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #213547; /* Define uma cor de texto mais escura para melhorar a legibilidade em um fundo branco. */
+    background-color: #ffffff; /* Altera a cor de fundo para branco no modo claro. */
   }
+  /* 
+    Ajusta a cor dos links no estado hover para o modo claro.
+  */
   a:hover {
-    color: #747bff;
+    color: #747bff; /* Define uma tonalidade apropriada para o destaque dos links quando o mouse passa sobre eles. */
   }
+  /* 
+    Altera a cor de fundo dos botões para harmonizar com o modo claro.
+  */
   button {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Define uma cor de fundo mais clara para os botões no modo claro. */
   }
 }

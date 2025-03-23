@@ -4,6 +4,7 @@ import MyOrgChart from "./MyOrgChart";
 function App() {
   return (
     <div className="App">
+      <button onClick={() => {}}>Ir para lua</button>
       <MyOrgChart />
     </div>
   );
