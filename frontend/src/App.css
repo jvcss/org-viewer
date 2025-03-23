@@ -12,56 +12,85 @@
   text-align: center;
 }
 
-/* .orgchart {
+/* this was moved up to the index css
+.orgchart {
   background: #fff !important;
 } */
-/* the following css is used to style the nodes */
+
+/*   Estilização base para os "marcadores" (linhas de conexão) dos nós:
+  Aplica a mesma cor de borda aos elementos que representam as laterais (left, right)
+  e a parte superior (top) dos nós, garantindo consistência visual na estrutura do organograma.
+*/
 .orgchart td.left,
 .orgchart td.right,
 .orgchart td.top {
   border-color: #aaa !important;
 }
-/* the following css is used to style the lines */
+
+/*   Estilização para as linhas de conexão verticais:
+  Define a cor de fundo dos elementos que descem a partir dos nós,
+  visualizando a relação hierárquica entre um nó pai e seus nós filhos.
+*/
 .orgchart td > .down {
   background-color: #aaa !important;
 }
-/* the following css is used to style the nodes */
+
+/*   Nós do nível intermediário:
+  Esses estilos definem a aparência dos nós que compõem o nível intermediário da hierarquia.
+  - A classe .title: define a área de título do nó, recebendo um fundo colorido (azul) que o distingue.
+  - A classe .content: estiliza as linhas (bordas) que conectam este nó aos demais, utilizando a mesma tonalidade.
+*/
 .orgchart .middle-level .title {
   background-color: #006699 !important;
 }
-/* the following css is used to style the lines */
 .orgchart .middle-level .content {
   border-color: #006699 !important;
 }
-/* the following css is used to style the nodes */
+
+/*   Nós do departamento de Produto:
+  Aplica estilos específicos aos nós que representam o departamento de Produto.
+  - A classe .title: recebe uma cor de fundo (verde) para identificar visualmente este departamento.
+  - A classe .content: utiliza uma borda com a mesma cor para manter a coerência na conexão hierárquica.
+*/
 .orgchart .product-dept .title {
   background-color: #009933 !important;
 }
-/* the following css is used to style the lines */
 .orgchart .product-dept .content {
   border-color: #009933 !important;
 }
-/* the following css is used to style the nodes */
+
+/*   Nós do departamento de Pesquisa e Desenvolvimento (P&D):
+  Estiliza os nós correspondentes ao departamento de P&D.
+  - A classe .title: recebe um fundo colorido (roxo) para diferenciá-lo dentro da hierarquia.
+  - A classe .content: a borda das conexões adota a mesma cor, reforçando o agrupamento visual dos nós de P&D.
+*/
 .orgchart .rd-dept .title {
   background-color: #993366 !important;
 }
-/* the following css is used to style the lines */
 .orgchart .rd-dept .content {
   border-color: #993366 !important;
 }
-/* the following css is used to style the nodes */
+
+/*   Nós representando a Fase 1 do Pipeline:
+  Define a aparência dos nós que compõem a primeira etapa do pipeline.
+  - A classe .title: possui um fundo com cor específica (marrom) para evidenciar essa fase.
+  - A classe .content: a borda segue a mesma cor, reforçando a conexão e a distinção hierárquica desta etapa.
+*/
 .orgchart .pipeline1 .title {
   background-color: #996633 !important;
 }
-/* the following css is used to style the lines */
 .orgchart .pipeline1 .content {
   border-color: #996633 !important;
 }
-/* the following css is used to style the nodes */
+
+/*   Nós do time de Frontend:
+  Estiliza os nós associados à equipe de Frontend.
+  - A classe .title: apresenta uma cor de fundo distinta (rosa forte) para identificar os elementos desse time.
+  - A classe .content: a borda é configurada com a mesma tonalidade, integrando visualmente os nós da equipe de Frontend na hierarquia.
+*/
 .orgchart .frontend1 .title {
   background-color: #cc0066 !important;
 }
-/* the following css is used to style the lines */
 .orgchart .frontend1 .content {
   border-color: #cc0066 !important;
 }
