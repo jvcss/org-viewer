@@ -57,4 +57,164 @@ Crie um arquivo .env na raiz do projeto e defina a URL do backend:
 `npm run dev`
 A aplicação será executada em uma porta padrão (geralmente 3000) e estará pronta para consumir a API do backend.
 
-Backend com Node.js (Express)
+### Backend com Node.js (Express)
+1. **Configurar o projeto:**
+```bash
+mkdir backend
+cd backend
+npm init -y
+npm install express cors
+
+```
+
+2. **Criar o arquivo server.js:**
+
+```js
+
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+const PORT = 3001;
+
+// Permitir requisições do frontend
+app.use(cors());
+
+// Endpoint que retorna o JSON do orgchart
+app.get('/api/orgchart', (req, res) => {
+  const orgchartData = {
+    id: "1",
+    name: "CEO",
+    title: "general manager",
+    children: [
+      { id: "2", name: "CTO", title: "department manager" }
+    ]
+  };
+  res.json(orgchartData);
+});
+
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
+```
+
+3. **Iniciar o servidor:**
+
+```bash
+node server.js
+```
+
+O endpoint estará disponível em http://localhost:3001/api/orgchart.
+
+### Backend com Laravel
+1. **Criar um novo projeto Laravel (caso não exista):**
+
+```bash
+composer create-project --prefer-dist laravel/laravel orgchart-backend
+cd orgchart-backend
+
+```
+
+2. **Configurar CORS:**
+Configure o CORS conforme a documentação do Laravel ou utilizando o pacote fruitcake/laravel-cors.
+
+3. **Definir a rota da API:**
+No arquivo `routes/api.php`, adicione:
+
+```php
+<?php
+
+use Illuminate\Http\Request;
+
+Route::get('/orgchart', function (Request $request) {
+    return response()->json([
+        "id" => "1",
+        "name" => "CEO",
+        "title" => "general manager",
+        "children" => [
+            ["id" => "2", "name" => "CTO", "title" => "department manager"],
+        ],
+    ]);
+});
+
+```
+
+4. **Iniciar o servidor Laravel:**
+```bash
+php artisan serve
+```
+
+### Integração do Frontend com o Backend
+No componente React, utilizei a variável de ambiente para buscar os dados da API:
+
+```js
+import React, { useEffect, useState } from "react";
+import "orgchart";
+import $ from "jquery";
+import "./App.css";
+import "./jquery.orgchart.css";
+
+const OrgChartComponent = () => {
+  const [chartData, setChartData] = useState(null);
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
+  useEffect(() => {
+    fetch(`${backendUrl}/api/orgchart`)
+      .then((response) => response.json())
+      .then((data) => setChartData(data))
+      .catch((error) => console.error("Erro ao buscar os dados:", error));
+  }, [backendUrl]);
+
+  useEffect(() => {
+    if (chartData) {
+      $("#chart-container").empty();
+      $("#chart-container").orgchart({
+        data: chartData,
+        verticalLevel: 8,
+        nodeContent: "title",
+      });
+    }
+    return () => {
+      $("#chart-container").empty();
+    };
+  }, [chartData]);
+
+  return <div id="chart-container" />;
+};
+
+export default OrgChartComponent;
+
+```
+
+Com essa abordagem, basta alterar o valor da variável de ambiente no arquivo `.env` para apontar para outro backend, sem a necessidade de modificar o código-fonte.
+
+- Versatilidade da Aplicação
+Configuração Dinâmica:
+Utilização de variáveis de ambiente para definir a URL do backend, permitindo alternar facilmente entre diferentes ambientes ou provedores (Node.js, Laravel, etc).
+
+- Arquitetura Desacoplada:
+O frontend e o backend são módulos independentes, o que facilita manutenção, testes e escalabilidade.
+
+- Facilidade de Extensão:
+O backend pode ser ampliado para suportar operações de criação, atualização e deleção (CRUD) dos dados do orgchart, bem como integração com bancos de dados e autenticação.
+
+- Experiência de Desenvolvimento Rápida:
+Com Vite e React, o desenvolvimento é ágil graças ao Hot Module Replacement (HMR) e à estrutura moderna do ecossistema JavaScript.
+
+- Adaptação a Diferentes Cenários:
+Seja para um ambiente de prototipagem, desenvolvimento ou produção, a aplicação se adapta com mínima configuração extra.
+
+### Futuras Melhorias
+- Atualizações em Tempo Real:
+Integração com WebSockets para atualização dinâmica do orgchart conforme mudanças nos dados.
+
+- Interface Interativa:
+Implementação de funcionalidades para edição direta dos nós do orgchart.
+
+- Melhoria na UX/UI:
+Customização dos estilos e da experiência do usuário para tornar a aplicação ainda mais intuitiva.
+
+- Testes Automatizados:
+Inclusão de testes unitários e de integração tanto para o frontend quanto para o backend.
+
+*Esta aplicação demonstra uma abordagem fullstack versátil, onde a flexibilidade de configuração e a separação clara entre frontend e backend possibilitam a adaptação a diversos cenários e requisitos. Sinta-se à vontade para expandir e personalizar o projeto conforme suas necessidades. """*
