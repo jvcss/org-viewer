@@ -221,4 +221,4 @@ Com essa abordagem, basta alterar o valor da variável de ambiente no arquivo `.
 - Testes Automatizados:
   Inclusão de testes unitários e de integração tanto para o frontend quanto para o backend.
 
-_Esta aplicação demonstra uma abordagem fullstack versátil, onde a flexibilidade de configuração e a separação clara entre frontend e backend possibilitam a adaptação a diversos cenários e requisitos. Sinta-se à vontade para expandir e personalizar o projeto conforme suas necessidades. """_
+*Esta aplicação demonstra uma abordagem fullstack versátil, onde a flexibilidade de configuração e a separação clara entre frontend e backend possibilitam a adaptação a diversos cenários e requisitos. Sinta-se à vontade para expandir e personalizar o projeto conforme suas necessidades.*
