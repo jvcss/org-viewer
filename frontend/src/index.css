@@ -22,8 +22,7 @@
   -moz-osx-font-smoothing: grayscale; /* Melhora a suavização das fontes em sistemas macOS para navegadores Mozilla. */
 }
 
-/* 
-  Estilização para o container do organograma (.orgchart):
+/* Estilização para o container do organograma (.orgchart):
   Define a aparência e o layout do organograma.
 */
 .orgchart {
@@ -106,8 +105,7 @@ button:focus-visible {
   Aplica estilos específicos quando o usuário prefere um esquema de cores claro.
 */
 @media (prefers-color-scheme: light) {
-  /* 
-    Redefinição dos estilos específicos para o modo claro.
+  /* Redefinição dos estilos específicos para o modo claro.
     Ajusta as cores para garantir um bom contraste em um fundo claro.
   */
   .orgchart {
