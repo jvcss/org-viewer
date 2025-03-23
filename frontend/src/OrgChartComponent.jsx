@@ -1,11 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "orgchart";
 import $ from "jquery";
 import "./App.css";
 import "./jquery.orgchart.css";
 
 const OrgChartComponent = () => {
+  const initialized = useRef(false);
+
   useEffect(() => {
+    if (initialized.current) return; // Impede nova inicialização
+    initialized.current = true;
+
+    
+    $("#chart-container").empty(); // Limpa o container para evitar elementos residuais [REACT LIXOSO]
     $("#chart-container").orgchart({
       data: {
         id: "1",
@@ -43,11 +50,8 @@ const OrgChartComponent = () => {
       nodeContent: "title",
     });
   }, []);
-  return (
-    <>
-      <div id="chart-container" />
-    </>
-  );
+
+  return <div id="chart-container" />;
 };
 
 export default OrgChartComponent;

@@ -1,7 +1,6 @@
-
-import './App.css';
-import OrgChartComponent from './OrgChartComponent';
-
+import "./App.css";
+import OrgChartComponent from "./OrgChartComponent";
+import OrgChartCom from "./OrgChartCom";
 function App() {
   return (
     <div className="App">
@@ -10,4 +9,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
