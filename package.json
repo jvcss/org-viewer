@@ -1,0 +1,22 @@
+{
+  "name": "org-viewer",
+  "version": "1.0.0",
+  "description": "viewer for organization struct",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "org",
+    "chart"
+  ],
+  "author": "JVCSS",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

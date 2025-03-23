@@ -1,0 +1,13 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+#chart-container {
+  font-family: Arial;
+  height: 820px;
+  border: 1px solid #aaa;
+  overflow: auto;
+  text-align: center;
+}
