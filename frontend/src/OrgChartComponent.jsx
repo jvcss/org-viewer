@@ -14,7 +14,7 @@ const OrgChartComponent = () => {
         title: "general manager",
         children: [{ id: "2", name: "CTO", title: "department manager" }],
       },
-      verticalLevel: 8,
+      //verticalLevel: 8,
       nodeContent: "title",
     });
 

@@ -25,7 +25,7 @@ const MyOrgChart = () => {
       $("#chart-container").empty();
       $("#chart-container").orgchart({
         data: chartData,
-        verticalLevel: 8,
+        //verticalLevel: 8,
         nodeContent: "title",
       });
     }

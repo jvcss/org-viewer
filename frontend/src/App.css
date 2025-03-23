@@ -11,3 +11,57 @@
   overflow: auto;
   text-align: center;
 }
+
+.orgchart {
+  background: #fff !important;
+}
+/* the following css is used to style the nodes */
+.orgchart td.left,
+.orgchart td.right,
+.orgchart td.top {
+  border-color: #aaa !important;
+}
+/* the following css is used to style the lines */
+.orgchart td > .down {
+  background-color: #aaa !important;
+}
+/* the following css is used to style the nodes */
+.orgchart .middle-level .title {
+  background-color: #006699 !important;
+}
+/* the following css is used to style the lines */
+.orgchart .middle-level .content {
+  border-color: #006699 !important;
+}
+/* the following css is used to style the nodes */
+.orgchart .product-dept .title {
+  background-color: #009933 !important;
+}
+/* the following css is used to style the lines */
+.orgchart .product-dept .content {
+  border-color: #009933 !important;
+}
+/* the following css is used to style the nodes */
+.orgchart .rd-dept .title {
+  background-color: #993366 !important;
+}
+/* the following css is used to style the lines */
+.orgchart .rd-dept .content {
+  border-color: #993366 !important;
+}
+/* the following css is used to style the nodes */
+.orgchart .pipeline1 .title {
+  background-color: #996633 !important;
+}
+/* the following css is used to style the lines */
+.orgchart .pipeline1 .content {
+  border-color: #996633 !important;
+}
+/* the following css is used to style the nodes */
+.orgchart .frontend1 .title {
+  background-color: #cc0066 !important;
+}
+/* the following css is used to style the lines */
+.orgchart .frontend1 .content {
+  border-color: #cc0066 !important;
+}
