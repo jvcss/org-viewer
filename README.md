@@ -42,8 +42,8 @@ A comunicação entre o frontend e o backend é realizada através de requisiç�
 1. **Clonar o repositório e instalar as dependências:**
 
 ```bash
-git clone 
-cd <nome-do-projeto>
+git clone https://github.com/jvcss/org-viewer.git
+cd org-viewer
 npm install
 ```
 
