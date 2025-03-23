@@ -23,6 +23,14 @@
 }
 
 /* 
+  Estilização para o container do organograma (.orgchart):
+  Define a aparência e o layout do organograma.
+*/
+.orgchart {
+  background: #242424 !important;
+}
+
+/* 
   Estilização para elementos de link (<a>):
   Define a aparência dos links de forma consistente.
 */
@@ -94,11 +102,18 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color; /* Adiciona um contorno de 4px ao redor do botão usando a cor padrão do anel de foco dos navegadores WebKit. */
 }
 
-/* 
-  Media Query para o modo claro:
+/*   Media Query para o modo claro:
   Aplica estilos específicos quando o usuário prefere um esquema de cores claro.
 */
 @media (prefers-color-scheme: light) {
+  /* 
+    Redefinição dos estilos específicos para o modo claro.
+    Ajusta as cores para garantir um bom contraste em um fundo claro.
+  */
+  .orgchart {
+    background: #fff !important;
+  }
+
   /* 
     Redefinição dos estilos globais para o modo claro.
     Ajusta as cores para garantir um bom contraste em um fundo claro.

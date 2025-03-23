@@ -50,7 +50,7 @@ npm install
 ```
 
 2. **Configurar a variável de ambiente:**
-   Crie um arquivo .env na raiz do projeto e defina a URL do backend:
+   Crie um arquivo .env na raiz do projeto frontend e defina a URL do backend:
 
 `VITE_BACKEND_URL=http://localhost:3001`
 

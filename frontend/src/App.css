@@ -12,9 +12,9 @@
   text-align: center;
 }
 
-.orgchart {
+/* .orgchart {
   background: #fff !important;
-}
+} */
 /* the following css is used to style the nodes */
 .orgchart td.left,
 .orgchart td.right,
