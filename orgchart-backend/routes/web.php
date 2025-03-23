@@ -10,7 +10,7 @@ Route::get('/teste', function () {
     return 'Teste OK';
 });
 
-Route::get('/orgchart', function () {
+Route::get('/api/orgchart', function () {
     return response()->json([
         "id" => "1",
         "name" => "CEO",
