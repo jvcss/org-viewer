@@ -1,6 +1,6 @@
 import "./App.css";
 import OrgChartComponent from "./OrgChartComponent";
-import OrgChartCom from "./OrgChartCom";
+import MyOrgChart from "./MyOrgChart";
 function App() {
   return (
     <div className="App">
